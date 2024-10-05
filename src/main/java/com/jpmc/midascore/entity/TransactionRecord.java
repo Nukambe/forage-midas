@@ -24,6 +24,9 @@ public class TransactionRecord {
     @Column(nullable = false)
     private float amount;
 
+    @Column(nullable = false)
+    private float incentive;
+
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     @Column(nullable = false)
@@ -36,10 +39,11 @@ public class TransactionRecord {
 
     protected TransactionRecord() {}
 
-    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount) {
+    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount, float incentive) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
+        this.incentive = incentive;
     }
 
     public long getId() { return id; }
@@ -53,6 +57,9 @@ public class TransactionRecord {
 
     public float getAmount() { return amount; }
     public void setAmount(float amount) { this.amount = amount; }
+
+    public float getIncentive() { return incentive; }
+    public void setIncentive(float incentive) { this.incentive = incentive; }
 
     @Override
     public String toString() {

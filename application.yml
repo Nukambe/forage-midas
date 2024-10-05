@@ -10,3 +10,5 @@ spring:
       path: /h2-console
 general:
   kafka-topic: forage-midas
+external:
+  incentive: http://localhost:8080/incentive

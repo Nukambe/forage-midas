@@ -16,7 +16,6 @@ public class ForageKafkaListener {
 
     @KafkaListener(topics = "${general.kafka-topic}", groupId = "forage-midas")
     public void listen(Transaction transaction) {
-//        System.out.println("Received Transaction: " + data);
         transactionService.executeTransaction(transaction);
     }
 
